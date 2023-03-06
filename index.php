@@ -30,9 +30,7 @@ if (isset($_POST['submit'])) {
     <link rel="icon" href="assets/img/favicon.png">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -52,7 +50,6 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Magnific Popup CSS -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-
     <!-- Medipro CSS -->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/style.css">

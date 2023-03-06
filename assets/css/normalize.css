@@ -9,6 +9,12 @@ Version:	1.1
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+@font-face {
+	font-family: "Lexend";
+	font-style: normal;
+	font-weight: 400;
+	src: local("lexend"), url("../webfonts/static/Lexend-Regular.ttf") format("truetype");;
+  }
 html {
 	 font-family: 'Lexend', sans-serif;
 	-moz-text-size-adjust: 100%;
@@ -171,7 +177,7 @@ select,
 optgroup,
 textarea {
 	color: #424646;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lexend', sans-serif;
 	font-weight:400;
 	font-size: 14px;
 	line-height: 24px;
