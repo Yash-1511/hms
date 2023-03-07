@@ -46,60 +46,201 @@ if (isset($_POST['submit'])) {
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="assets/css/plugins.css">
 	<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
+	<style>
+        body {
+            font-family: 'Lexend';
+            box-sizing: border-box;
+            overflow: hidden;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        .brand-wrapper {
+            width: 300px;
+            padding-top: 7px;
+            padding-bottom: 8px;
+        }
+
+        .brand-wrapper .logo {
+            height: 40px;
+        }
+
+        .login-section-wrapper {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            padding: 68px 100px;
+            background-color: #fff;
+        }
+
+        @media (max-width: 991px) {
+            .login-section-wrapper {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .login-section-wrapper {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                min-height: 100vh;
+            }
+        }
+
+        .login-wrapper {
+            width: 300px;
+            max-width: 100%;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        @media (max-width: 575px) {
+            .login-wrapper {
+                width: 100%;
+            }
+        }
+
+        .login-wrapper label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #b0adad;
+        }
+
+        .login-wrapper .form-control {
+            border: none;
+            border-bottom: 1px solid #e7e7e7;
+            border-radius: 0;
+            padding: 12px 5px;
+            min-height: 40px;
+            font-size: 18px;
+            font-weight: normal;
+			margin-bottom: 5px;
+        }
+
+        .login-wrapper .form-control::-webkit-input-placeholder {
+            color: #b0adad;
+        }
+
+        .login-wrapper .form-control::-moz-placeholder {
+            color: #b0adad;
+        }
+
+        .login-wrapper .form-control:-ms-input-placeholder {
+            color: #b0adad;
+        }
+
+        .login-wrapper .form-control::-ms-input-placeholder {
+            color: #b0adad;
+        }
+
+        .login-wrapper .form-control::placeholder {
+            color: #b0adad;
+        }
+
+        .login-wrapper .login-btn {
+            padding: 13px 25px;
+            width: 100%;
+            background-color: rgb(99 102 241);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            box-shadow: none;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+
+        .login-wrapper .login-btn:hover {
+            border: 1px solid #fdbb28;
+            background-color: #fff;
+            color: #fdbb28;
+        }
+
+        .login-wrapper a.forgot-password-link {
+            color: #080808;
+            font-size: 14px;
+            text-decoration: underline;
+            display: inline-block;
+            margin-bottom: 54px;
+        }
+
+        @media (max-width: 575px) {
+            .login-wrapper a.forgot-password-link {
+                margin-bottom: 16px;
+            }
+        }
+
+        .login-wrapper-footer-text {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        .login-title {
+            font-size: 30px;
+            color: #000;
+            margin-bottom: 25px;
+        }
+
+        .login-img {
+            width: 100%;
+            height: 100vh;
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: left;
+            object-position: left;
+        }
+
+        .footer-link {
+            position: absolute;
+            bottom: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+    </style>
 </head>
 
 <body class="login">
-	<div class="row">
-		<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-			<div class="logo margin-top-30">
-				<a href="../../index.php">
-					<h2> HMS | Doctor Login</h2>
-				</a>
-			</div>
+	
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 login-section-wrapper">
+                <div class="brand-wrapper">
+                    <img src="assets/images/logo1.png" alt="logo" class="logo">
+                    
+                </div>
+                <div class="login-wrapper my-auto">
+                    <h1 class="login-title">Doctor Login</h1>
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="username" id="email" class="form-control"
+                                placeholder="email@example.com">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control"
+                                placeholder="enter your passsword">
+                        </div>
+						<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg'] = ""; ?></span>
+                        <input name="submit" id="login" class="btn btn-block login-btn" type="submit" value="Login">
+                    </form>
+                    <a href="forgot-password.php" class="forgot-password-link">Forgot password?</a>
+                    
+                </div>
+            </div>
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="assets/images/login.webp" alt="login image" class="login-img">
+            </div>
+        </div>
+    </div>
+			
 
-			<div class="box-login">
-				<form class="form-login" method="post">
-					<fieldset>
-						<legend>
-							Sign in to your account
-						</legend>
-						<p>
-							Please enter your name and password to log in.<br />
-							<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg'] = ""; ?></span>
-						</p>
-						<div class="form-group">
-							<span class="input-icon">
-								<input type="text" class="form-control" name="username" placeholder="Username">
-								<i class="fa fa-user"></i> </span>
-						</div>
-						<div class="form-group form-actions">
-							<span class="input-icon">
-								<input type="password" class="form-control password" name="password" placeholder="Password">
-								<i class="fa fa-lock"></i>
-							</span>
-							<a href="forgot-password.php">
-								Forgot Password ?
-							</a>
-						</div>
-						<div class="form-actions">
-
-							<button type="submit" class="btn btn-primary pull-right" name="submit">
-								Login <i class="fa fa-arrow-circle-right"></i>
-							</button>
-						</div>
-
-
-					</fieldset>
-				</form>
-
-				<div class="copyright">
-					<span class="text-bold text-uppercase"> Hospital Management System</span>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
+				
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="vendor/modernizr/modernizr.js"></script>
